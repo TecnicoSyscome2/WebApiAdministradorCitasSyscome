@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace WebApi.Citas.Administrador.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("RUTA/[controller]")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]

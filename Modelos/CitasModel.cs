@@ -29,14 +29,14 @@ namespace WebApi.Citas.Administrador.Modelos
 
         [Column("estado")]
         [RegularExpression("^(cancelada|confirmada|pendiente)$", ErrorMessage = "El estado debe ser 'cancelada', 'confirmada' o 'pendiente'.")]
-        public string Estado { get; set; }
+        public string Estado { get; set; } = null!;
         [Column("horas")]
         public int Horas { get; set; }
         [Column("minutos")]
         public int minutos { get; set; }
 
         [Column("correo")]
-        public string Correo { get; set; }
+        public string Correo { get; set; } = null!;
 
         [Column("idempresa")]
         public int idempresa { get; set; }

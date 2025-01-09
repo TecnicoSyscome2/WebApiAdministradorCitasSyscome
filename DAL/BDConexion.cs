@@ -8,19 +8,21 @@ using Microsoft.EntityFrameworkCore;
 
 namespace WebApi.Citas.Administrador.DAL
 {
+    // Solo una clase BDConexion, asegúrate de no duplicarla
     public class BDConexion : DbContext
     {
         // Define las entidades del modelo
-        public DbSet<Clientes> Clientes { get; set; }
-        public DbSet<CitasModel> Citas { get; set; }
-        public DbSet<AsesoresModel> Asesores { get; set; }
-        public DbSet<empresaModel> Empresas { get; set; }
-        public DbSet<ProductosModel> Productos { get; set; }
-        public DbSet<CitasDetModel> CitasDet { get; set; }
+        public DbSet<Clientes> Clientes { get; set; } = null!;  // Añadido null! para suprimir el aviso de CS8618
+        public DbSet<CitasModel> Citas { get; set; } = default!;
+        public DbSet<AsesoresModel> Asesores { get; set; } = default!;
+        public DbSet<empresaModel> Empresas { get; set; } = default!;
+        public DbSet<ProductosModel> Productos { get; set; } = default!;
+        public DbSet<CitasDetModel> CitasDet { get; set; } = default!;
 
+        // Constructor: asegurate de no tener más de un constructor con los mismos parámetros
         public BDConexion(DbContextOptions<BDConexion> options) : base(options) { }
 
-        // Configuración del modelo
+        // Método OnModelCreating: asegurate de que solo haya una definición
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
