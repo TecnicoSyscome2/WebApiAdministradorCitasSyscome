@@ -20,6 +20,8 @@ namespace WebApi.Citas.Administrador.DAL
         public DbSet<CitasDetModel> CitasDet { get; set; } = default!;
         public DbSet<userModel> registeredusers { get; set; }
 
+        public DbSet<AsesoresDisponibilidadModel> AsesoresDisponibilidad { get; set; }
+
         // Constructor: asegurate de no tener más de un constructor con los mismos parámetros
         public BDConexion(DbContextOptions<BDConexion> options) : base(options) { }
 

@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.Citas.Administrador.DAL;
 using WebApi.Citas.Administrador.Modelos;
@@ -7,6 +9,8 @@ namespace WebApi.Citas.Administrador.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("MyPolicy")]
+    [AllowAnonymous]
     public class AsesoresController : ControllerBase
     {
         private readonly AsesoresDAL _repository;
